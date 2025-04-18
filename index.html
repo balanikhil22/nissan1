@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nissan Car Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .header {
+            background-color: #f8f9fa;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-around;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-item {
+            padding: 10px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .nav-item:focus {
+            outline: 2px solid #007bff;
+            outline-offset: -2px;
+        }
+
+        .main-content {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        button:focus {
+            outline: 2px solid #007bff;
+            outline-offset: -2px;
+        }
+
+        .footer {
+            background-color: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav>
+            <ul class="nav">
+                <li><a href="#" class="nav-item">Home</a></li>
+                <li><a href="#" class="nav-item">About Us</a></li>
+                <li><a href="#" class="nav-item">Models</a></li>
+                <li><a href="#" class="nav-item">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section class="section">
+            <h1>Welcome to Nissan Car Website</h1>
+            <p>Discover the future of mobility with Nissan's innovative technology and superior design.</p>
+        </section>
+
+        <section class="section">
+            <h2>Latest News</h2>
+            <div class="news-list">
+                <article class="news-item">
+                    <h3>New Model Announcement</h3>
+                    <p>Learn more about our latest model release and its innovative features.</p>
+                </article>
+                <article class="news-item">
+                    <h3>Expert Advice</h3>
+                    <p>Get expert advice from our experts on safety and technology.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Featured Models</h2>
+            <div class="model-grid">
+                <div class="model-card">
+                    <img src="nissan-car-1.jpg" alt="Nissan Model 1" width="300" height="200">
+                    <h3>Nissan Model 1</h3>
+                    <p>Premium sedan with advanced technology features.</p>
+                </div>
+                <div class="model-card">
+                    <img src="nissan-car-2.jpg" alt="Nissan Model 2" width="300" height="200">
+                    <h3>Nissan Model 2</h3>
+                    <p>Sporty crossover with state-of-the-art performance.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Contact Us</h2>
+            <form id="contact-form" onsubmit="return validateForm()">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2023 Nissan Car Website. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function validateForm() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            if (name === '' || email === '' || message === '') {
+                alert('Please fill in all required fields');
+                return false;
+            }
+
+            if (!isValidEmail(email)) {
+                alert('Please enter a valid email address');
+                return false;
+            }
+
+            alert('Message sent successfully!');
+            return true;
+        }
+
+        function isValidEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(String(email).toLowerCase());
+        }
+    </script>
+</body>
+</html>
